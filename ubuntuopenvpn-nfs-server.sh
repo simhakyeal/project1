@@ -2,7 +2,7 @@
 apt update
 DEBIAN_FRONTEND=nointeractive apt install -y nfs-server
 mkdir /nfs-shared
-echo "/nfs-shared 172.16.0.0/12(rw,sync)" >> /etc/exports
+echo "/nfs-shared 10.0.2.0/24(rw,sync)" >> /etc/exports
 systemctl restart nfs-server
 systemctl enable nfs-server
 apt install -y amazon-ec2-utils
